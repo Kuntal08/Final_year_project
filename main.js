@@ -1,5 +1,5 @@
-/* 
-Main.js manages the training, classification, and output of sign language gestures. 
+/*
+Main.js manages the training, classification, and output of sign language gestures.
 
 - The Main class is responsible for altering page elements on the user interface such as buttons,
 video elements, etc. It is also handles the training, prediction, and video call features.
@@ -7,12 +7,12 @@ video elements, etc. It is also handles the training, prediction, and video call
 output. This class is also responsible for turning a caller's words into speech in video call mode.
 
 Credits:
-The kNN Classifier used for this project was created by Google TensorFlow. 
+The kNN Classifier used for this project was created by Google TensorFlow.
 The kNN classifier requires the computation of random numbers that is not readily available on JavaScript.
 To accomplish this, the work of Johannes Baagøe on "implementations of Randomness in Javascript" was used.
 Additionally, usage of TensorFlow was learned from Abishek Singh's "alexa-sign-language-translator".
 
-Author: Sufiyaan Nadeem
+Author: Madhab Paul, Kuntal Kumar Majee, Subham Kumar Rai
 */
 
 // Importing the k-Nearest Neighbors Algorithm
@@ -135,7 +135,7 @@ class Main {
       })
   }
 
-  /*This function initializes the training for Start and Stop Gestures. It also 
+  /*This function initializes the training for Start and Stop Gestures. It also
   sets a click listener for the next button.*/
   initialTraining() {
     // if next button on initial training page is pressed, setup the custom gesture training UI.
@@ -176,7 +176,7 @@ class Main {
     this.knn.load().then(() => this.initializeTraining());
   }
 
-  /*This creates the training and clear buttons for the initial Start and Stop gesture. 
+  /*This creates the training and clear buttons for the initial Start and Stop gesture.
   It also creates the Gesture Card.*/
   initialGestures(i, btnType) {
     // Get specified training button
@@ -280,7 +280,7 @@ class Main {
     }
   }
 
-  /*This creates the training and clear buttons for the new gesture. It also creates the 
+  /*This creates the training and clear buttons for the new gesture. It also creates the
     Gesture Card.*/
   createTrainingBtns(i) { //i is the index of the new word
     // Create Train and Clear Buttons
@@ -421,7 +421,7 @@ class Main {
           this.gestureCards[gestureIndex].appendChild(gestureImg);
         }
 
-        // if 30 examples are trained, show check mark to the user 
+        // if 30 examples are trained, show check mark to the user
         if (exampleCount == 30) {
           this.checkMarks[gestureIndex].src = "Images//checkmark.svg";
           this.checkMarks[gestureIndex].classList.add("animated");
@@ -431,7 +431,7 @@ class Main {
     }
   }
 
-  /*This function creates the button that goes to the Translate Page. It also initializes the UI 
+  /*This function creates the button that goes to the Translate Page. It also initializes the UI
   of the translate page and starts or stops prediction on click.*/
   createTranslateBtn() {
     this.predButton.style.display = "block";
